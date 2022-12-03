@@ -229,7 +229,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
         <div id="welcome">
           <h1>
             <span> Oke cool.. </span>
-            Maar waar kijk ik naar?
+            Waar kijk ik naar?
           </h1>
         </div>
 
@@ -317,6 +317,53 @@ import { Component, ViewEncapsulation } from '@angular/core';
             Je kunt er ook lokaal 1 draaien met Docker.
           </p>
         </div>
+
+        <div id="welcome">
+          <h1>
+              <span>Ok. Klaar. Broek ophijsen... </span>
+              Een Docker container maken
+          </h1>
+        </div>
+
+        <div>
+          <p>&nbsp;</p>
+          <p>
+            We gaan straks alle micro-frontends en de shell deployen naar een AKS cluster.
+            Daarom moet de workload (zijnde jouw micro-frontend) in een container draaien.
+            Je vindt in de root van de repo al twee dockerfiles. Dat zijn de shell.dockerfile en de welkom.dockerfile.
+            Deze kun je als uitgangspunt gebruiken. Kopieeer er één en pas die aan zodat je jouw app ermee kunt bouwen.
+
+            Een container bouwen doe je zo:
+          </p>
+          <pre>docker build -t [naam-van-je-microfrontend]:latest -f [naam-van-de-dockerfile] .</pre>
+          <p>&nbsp;</p>
+          <p>Een docker container draai je zo:</p>
+          <pre>docker run -d -p 5201:80 [naam-van-je-microfrontend]</pre>
+          <p>&nbsp;</p>
+          <p>
+            In dit geval draait nu je container op port 5201. 
+            Gebeurt er niks? Kijk dan even in je docker dashboard. Misschien staat er een error.
+          </p>
+          <p>&nbsp;</p>
+          <p>
+            Als de container build, commit en push dan. 
+            Trek even Albert aan z'n jasje, die jast 'm dan de repo in zodat Aris 'm kan deployen.
+          </p>
+        </div>
+
+<div align="center">
+<br />
+<br />
+------------------------------------------------------------
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</div>
 
         <div id="welcome">
           <h1>
