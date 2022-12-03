@@ -159,244 +159,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       #hero .logo-container svg {
         color: rgba(255, 255, 255, 1);
         width: 66.666667%;
-      }
-
-      #middle-content {
-        align-items: flex-start;
-        display: grid;
-        gap: 4rem;
-        grid-template-columns: 1fr;
-        margin-top: 3.5rem;
-      }
-
-      #learning-materials {
-        padding: 2.5rem 2rem;
-      }
-      #learning-materials h2 {
-        font-weight: 500;
-        font-size: 1.25rem;
-        letter-spacing: -0.025em;
-        line-height: 1.75rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      .list-item-link {
-        align-items: center;
-        border-radius: 0.75rem;
-        display: flex;
-        margin-top: 1rem;
-        padding: 1rem;
-        transition-property: background-color, border-color, color, fill, stroke,
-          opacity, box-shadow, transform, filter, backdrop-filter,
-          -webkit-backdrop-filter;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-        width: 100%;
-      }
-      .list-item-link svg:first-child {
-        margin-right: 1rem;
-        height: 1.5rem;
-        transition-property: background-color, border-color, color, fill, stroke,
-          opacity, box-shadow, transform, filter, backdrop-filter,
-          -webkit-backdrop-filter;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-        width: 1.5rem;
-      }
-      .list-item-link > span {
-        flex-grow: 1;
-        font-weight: 400;
-        transition-property: background-color, border-color, color, fill, stroke,
-          opacity, box-shadow, transform, filter, backdrop-filter,
-          -webkit-backdrop-filter;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-      }
-      .list-item-link > span > span {
-        color: rgba(107, 114, 128, 1);
-        display: block;
-        flex-grow: 1;
-        font-size: 0.75rem;
-        font-weight: 300;
-        line-height: 1rem;
-        transition-property: background-color, border-color, color, fill, stroke,
-          opacity, box-shadow, transform, filter, backdrop-filter,
-          -webkit-backdrop-filter;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-      }
-      .list-item-link svg:last-child {
-        height: 1rem;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-        width: 1rem;
-      }
-      .list-item-link:hover {
-        color: rgba(255, 255, 255, 1);
-        background-color: hsla(162, 47%, 50%, 1);
-      }
-      .list-item-link:hover > span {
-      }
-      .list-item-link:hover > span > span {
-        color: rgba(243, 244, 246, 1);
-      }
-      .list-item-link:hover svg:last-child {
-        transform: translateX(0.25rem);
-      }
-
-      #other-links {
-      }
-      .button-pill {
-        padding: 1.5rem 2rem;
-        transition-duration: 300ms;
-        transition-property: background-color, border-color, color, fill, stroke,
-          opacity, box-shadow, transform, filter, backdrop-filter,
-          -webkit-backdrop-filter;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        align-items: center;
-        display: flex;
-      }
-      .button-pill svg {
-        transition-property: background-color, border-color, color, fill, stroke,
-          opacity, box-shadow, transform, filter, backdrop-filter,
-          -webkit-backdrop-filter;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-        flex-shrink: 0;
-        width: 3rem;
-      }
-      .button-pill > span {
-        letter-spacing: -0.025em;
-        font-weight: 400;
-        font-size: 1.125rem;
-        line-height: 1.75rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      .button-pill span span {
-        display: block;
-        font-size: 0.875rem;
-        font-weight: 300;
-        line-height: 1.25rem;
-      }
-      .button-pill:hover svg,
-      .button-pill:hover {
-        color: rgba(255, 255, 255, 1) !important;
-      }
-      #nx-console:hover {
-        background-color: rgba(0, 122, 204, 1);
-      }
-      #nx-console svg {
-        color: rgba(0, 122, 204, 1);
-      }
-
-      #nx-repo:hover {
-        background-color: rgba(24, 23, 23, 1);
-      }
-      #nx-repo svg {
-        color: rgba(24, 23, 23, 1);
-      }
-
-      #nx-cloud {
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-        padding: 2.5rem 2rem;
-      }
-      #nx-cloud > div {
-        align-items: center;
-        display: flex;
-      }
-      #nx-cloud > div svg {
-        border-radius: 0.375rem;
-        flex-shrink: 0;
-        width: 3rem;
-      }
-      #nx-cloud > div h2 {
-        font-size: 1.125rem;
-        font-weight: 400;
-        letter-spacing: -0.025em;
-        line-height: 1.75rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      #nx-cloud > div h2 span {
-        display: block;
-        font-size: 0.875rem;
-        font-weight: 300;
-        line-height: 1.25rem;
-      }
-      #nx-cloud p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        margin-top: 1rem;
-      }
-      #nx-cloud pre {
-        margin-top: 1rem;
-      }
-      #nx-cloud a {
-        color: rgba(107, 114, 128, 1);
-        display: block;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        margin-top: 1.5rem;
-        text-align: right;
-      }
-      #nx-cloud a:hover {
-        text-decoration: underline;
-      }
-
-      #commands {
-        padding: 2.5rem 2rem;
-
-        margin-top: 3.5rem;
-      }
-      #commands h2 {
-        font-size: 1.25rem;
-        font-weight: 400;
-        letter-spacing: -0.025em;
-        line-height: 1.75rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      #commands p {
-        font-size: 1rem;
-        font-weight: 300;
-        line-height: 1.5rem;
-        margin-top: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      details {
-        align-items: center;
-        display: flex;
-        margin-top: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        width: 100%;
-      }
-      details pre > span {
-        color: rgba(181, 181, 181, 1);
-      }
-      summary {
-        border-radius: 0.5rem;
-        display: flex;
-        font-weight: 400;
-        padding: 0.5rem;
-        cursor: pointer;
-        transition-property: background-color, border-color, color, fill, stroke,
-          opacity, box-shadow, transform, filter, backdrop-filter,
-          -webkit-backdrop-filter;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-      }
-      summary:hover {
-        background-color: rgba(243, 244, 246, 1);
-      }
-      summary svg {
-        height: 1.5rem;
-        margin-right: 1rem;
-        width: 1.5rem;
+        max-width: 100px;
       }
 
       #love {
@@ -429,14 +192,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
     </style>
     <div class="wrapper">
       <div class="container">
-        <!--  WELCOME  -->
-        <div id="welcome">
-          <h1>
-            <span> Hello there, </span>
-            Welcome welkom 👋
-          </h1>
-        </div>
-
         <!--  HERO  -->
         <div id="hero" class="rounded">
           <div class="text-container">
@@ -454,9 +209,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
                   d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
                 />
               </svg>
-              <span>You&apos;re up and running</span>
+              <span>It worked!</span>
             </h2>
-            <a href="#commands"> What&apos;s next? </a>
           </div>
           <div class="logo-container">
             <svg
@@ -472,353 +226,150 @@ import { Component, ViewEncapsulation } from '@angular/core';
           </div>
         </div>
 
-        <!--  MIDDLE CONTENT  -->
-        <div id="middle-content">
-          <div id="learning-materials" class="rounded shadow">
-            <h2>Learning materials</h2>
-            <a
-              href="https://nx.dev/getting-started/intro?utm_source=nx-project"
-              target="_blank"
-              rel="noreferrer"
-              class="list-item-link"
-            >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
-              </svg>
-              <span>
-                Documentation
-                <span> Everything is in there </span>
-              </span>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://blog.nrwl.io/?utm_source=nx-project"
-              target="_blank"
-              rel="noreferrer"
-              class="list-item-link"
-            >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                />
-              </svg>
-              <span>
-                Blog
-                <span> Changelog, features & events </span>
-              </span>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://www.youtube.com/c/Nrwl_io/videos?utm_source=nx-project&sub_confirmation=1"
-              target="_blank"
-              rel="noreferrer"
-              class="list-item-link"
-            >
-              <svg
-                role="img"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>YouTube</title>
-                <path
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                />
-              </svg>
-              <span>
-                YouTube channel
-                <span> Nx Show, talks & tutorials </span>
-              </span>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://nx.dev/angular-tutorial/01-create-application?utm_source=nx-project"
-              target="_blank"
-              rel="noreferrer"
-              class="list-item-link"
-            >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
-                />
-              </svg>
-              <span>
-                Interactive tutorials
-                <span> Create an app, step-by-step </span>
-              </span>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://nxplaybook.com/?utm_source=nx-project"
-              target="_blank"
-              rel="noreferrer"
-              class="list-item-link"
-            >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path
-                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                />
-              </svg>
-              <span>
-                Video courses
-                <span> Nx custom courses </span>
-              </span>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </a>
-          </div>
-          <div id="other-links">
-            <a
-              id="nx-console"
-              class="button-pill rounded shadow"
-              href="https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console&utm_source=nx-project"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <svg
-                fill="currentColor"
-                role="img"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Visual Studio Code</title>
-                <path
-                  d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"
-                />
-              </svg>
-              <span>
-                Install Nx Console
-                <span>Plugin for VSCode</span>
-              </span>
-            </a>
-            <div id="nx-cloud" class="rounded shadow">
-              <div>
-                <svg
-                  viewBox="0 0 120 120"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M120 15V30C103.44 30 90 43.44 90 60C90 76.56 76.56 90 60 90C43.44 90 30 103.44 30 120H15C6.72 120 0 113.28 0 105V15C0 6.72 6.72 0 15 0H105C113.28 0 120 6.72 120 15Z"
-                    fill="#0E2039"
-                  />
-                  <path
-                    d="M120 30V105C120 113.28 113.28 120 105 120H30C30 103.44 43.44 90 60 90C76.56 90 90 76.56 90 60C90 43.44 103.44 30 120 30Z"
-                    fill="white"
-                  />
-                </svg>
-                <h2>
-                  NxCloud
-                  <span> Enable faster CI & better DX </span>
-                </h2>
-              </div>
-              <p>
-                You can activate distributed tasks executions and caching by
-                running:
-              </p>
-              <pre>nx connect-to-nx-cloud</pre>
-              <a
-                href="https://nx.app/?utm_source=nx-project"
-                target="_blank"
-                rel="noreferrer"
-              >
-                What is Nx Cloud?
-              </a>
-            </div>
-            <a
-              id="nx-repo"
-              class="button-pill rounded shadow"
-              href="https://github.com/nrwl/nx?utm_source=nx-project"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <svg
-                fill="currentColor"
-                role="img"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                />
-              </svg>
-              <span>
-                Nx is open source
-                <span> Love Nx? Give us a star! </span>
-              </span>
-            </a>
-          </div>
+        <div id="welcome">
+          <h1>
+            <span> Oke cool.. </span>
+            Maar waar kijk ik naar?
+          </h1>
         </div>
 
-        <!--  COMMANDS  -->
-        <div id="commands" class="rounded shadow">
-          <h2>Next steps</h2>
-          <p>Here are some things you can do with Nx:</p>
-          <details>
-            <summary>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              Add UI library
-            </summary>
-            <pre><span># Generate UI lib</span>
-nx g @nrwl/angular:lib ui
+        <div>
+          <p>&nbsp;</p>
+          <p>
+            Je hebt net een repo gedownload. 
+            Er staan een berg Angular apps in die een aantal bijzondere eigenschappen hebben:
+          </p>
+          <ul>
+            <li>
+              Je bendt beland in een repo met meerdere apps. Open de root map van de repo maar eens met VSCode. 
+              Je ziet een /apps map. Daarin staan alle hosts en alle micro-frontends. 
+              'shell' is in dit geval een host, en 'welkom' is een micro-frontend.
+            </li>
+            <li>
+              De shell app (de host dus) is de app waarin alle micro-frontends draaien.
+            </li>
+            <li>
+              Deze app maakt gebruik van dynamic module federation. 
+              De micro-frontends worden dus on the fly opgehaald. Dat kun je op een aantal plekken zien: <br />
+              - Kijk maar eens bij F12 - network. Daar zie je dat remoteEntry.mjs wordt opgehaald. <br />
+              - Kijk ook maar eens in /apps/shell/src/app/assets/module-federation.manifest.json. 
+            </li>
+            <li>
+              Alle apps delen al hun dependencies. 
+              Het is dus niet mogelijk om de ene app met Angular 12 te bouwen en de andere met Angular 13.
+            </li>
+          </ul>
+        </div>
 
-<span># Add a component</span>
-nx g @nrwl/angular:component button --project ui</pre>
-          </details>
-          <details>
-            <summary>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              View interactive project graph
-            </summary>
-            <pre>nx graph</pre>
-          </details>
-          <details>
-            <summary>
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              Run affected commands
-            </summary>
-            <pre><span># see what&apos;s been affected by changes</span>
-nx affected:graph
+        <div id="welcome">
+          <h1>
+            <span> Oke cool.. </span>
+            En wat moet ik nu doen?
+          </h1>
+        </div>
 
-<span># run tests for current changes</span>
-nx affected:test
+        <div>
+          <p>&nbsp;</p>
+          <p>
+            <strong>Maak een nieuwe micro-frontend.</strong> 
+            All you need to do is:
+          </p>
 
-<span># run e2e tests for current changes</span>
-nx affected:e2e</pre>
-          </details>
+          <pre>nx g @nrwl/angular:remote [naam-van-microfrontend-hier] --host=shell --port=420X</pre>
+
+          <p>&nbsp;</p>
+          <p>Wil je 'm zien draaien in de shell?</p>
+          <pre>nx serve shell --devRemotes=welkom,[naam-van-microfrontend-hier]</pre>
+
+          <p>&nbsp;</p>
+          <p><strong>
+            Nee!! 
+            Natuurlijk niet!!
+            Ik wil 'm niet zien in de shell! 
+            Want dan ben ik afhankelijk van iedereen!!!! 
+            En dat is nu net het hele idee achter deze manier van een app bouwen!! 
+            Ik wil alleen m'n eigen micro-frontend zien:
+          </strong></p>
+          <pre>nx serve [naam-van-microfrontend-hier]</pre>
+
+          <p>&nbsp;</p>
+          <p>
+            In de /apps folder is jouw micro-frontend erbij gekomen. 
+            Je kunt hier je app bouwen met angular zoals je gewend bent.
+            Let wel op als je dependencies toevoegt. 
+            Die voeg je voor iedereen toe.
+            Voeg je ergens niet de laatste versie van toe? 
+            Overleg dan met je collega's!!
+            Anders slooop je boel.
+          </p>
+
+          <p>&nbsp;</p>
+          <p>
+            Tip: Wil je niet dat je collega's de boel slopen? Bouw ff een cypress testje voor ze.
+          </p>
+
+          <p>&nbsp;</p>
+          <p>
+            Je bent hier gekomen om een front-end te bouwen. En geen back-end. Maar die heb je wel nodig.
+            Hier vindt je een api waarmee je JSON objecten kunt CRUDden:
+            <a href="https://github.com/appie2go/Testing.GraphStoreApi">https://github.com/appie2go/Testing.GraphStoreApi</a>.
+            Aris heeft er al 1 voor je opgespind in de cloud. Die kun je gebruiken. 
+            Je kunt er ook lokaal 1 draaien met Docker.
+          </p>
+        </div>
+
+        <div id="welcome">
+          <h1>
+              <span>Ik dacht dat je het nooit zou vragen.. </span>
+              Hoe heb je deze repo dan gemaakt?
+          </h1>
+        </div>
+
+        <div>
+          <p>&nbsp;</p>
+          <p>Om dit te maken moet je de volgende dingen doen:</p>
+          <ul>
+            <li>Je begint altijd met een nieuwe NX workspace.</li>
+            <li>Daarna genereer je wat je nodig hebt... That's all there is to it:</li>
+          </ul>
+
+          <p>
+            Zo maak je een micro-frontend architectuur <strong>zonder</strong> dynamic module federation. 
+            Probeer dit maar eens (<strong>in een andere map uiteraard!!!</strong>):
+          </p>
+          <pre>
+
+npx create-nx-workspace workspace-zonder-dynamicmodulefederation
+cd workspace-zonder-dynamicmodulefederation
+nx g @nrwl/angular:host myhostapp
+nx g @nrwl/angular:remote mymicrofrontend --host=myhostapp
+
+nx serve myhostapp --devRemotes=mymicrofrontend
+          </pre>
+
+          <p>
+            Het resultaat zie je door met je browser naar http://localhost:4200 te navigeren.
+            Open de netwerk tab als je rondklikt. 
+            Je zult zien dat alle modules in de app gebakken zitten.
+          </p>
+
+          <p>&nbsp;</p>
+          <p>
+            Om er één te maken mét dynamic module federation doe je het volgende. 
+            Dit is dus wat ik gedaan heb om deze repo te maken. Probeer dit ook maar eens 
+            (<strong>weer in een andere map uiteraard!!!</strong>):
+          </p>
+
+          <pre>
+
+npx create-nx-workspace workspace-met-dynamicmodulefederation
+cd workspace-met-dynamicmodulefederation
+nx g @nrwl/angular:host myhostapp --remotes=mymicrofrontend --dynamic
+
+nx serve myhostapp --devRemotes=mymicrofrontend
+          </pre>
+
+          <p>En bekijk dit maar eens...</p>
         </div>
 
         <p id="love">
