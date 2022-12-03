@@ -67,7 +67,7 @@ Clone deze repo. Trek een terminal/command prompt, navigeer naar de map waar je 
 
 ``` powershell
 npm install
-nx serve shell --devRemotes welcome
+nx serve shell --devRemotes welkom
 ```
 
 Open een browser, en navigeer naar http://localhost:4200. De volgende instructies vindt je daar.

@@ -1,0 +1,109 @@
+{
+  "name": "welkom",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/welkom/src",
+  "prefix": "maffe-maandag",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/welkom",
+        "index": "apps/welkom/src/index.html",
+        "main": "apps/welkom/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/welkom/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/welkom/src/favicon.ico", "apps/welkom/src/assets"],
+        "styles": ["apps/welkom/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/welkom/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/welkom/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "welkom:build:production"
+        },
+        "development": {
+          "browserTarget": "welkom:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4201,
+        "publicHost": "http://localhost:4201"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "welkom:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/welkom/**/*.ts", "apps/welkom/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/welkom/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/angular:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "welkom:build",
+        "port": 4201
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "welkom:build:development"
+        },
+        "production": {
+          "buildTarget": "welkom:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
