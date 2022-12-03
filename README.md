@@ -47,7 +47,7 @@ Omdat we AKS interessant vinden, deployen we de app in een Docker container. Dan
 +------------------------------------------------+
 ```
 
-## Prerequisites (dit heb je nodig om mee te doen!!)
+## Wat heb ik nodig?
 
 Uiteraard gaan we geen droge Powerpoint presentatie zien. Jij gaat een micro-frontend maken. Daarvoor heb je dit nodig:
 
@@ -56,7 +56,7 @@ Uiteraard gaan we geen droge Powerpoint presentatie zien. Jij gaat een micro-fro
 * Npm
 * NX. Run: `npm i nx -g`
 
-## How to get started
+## Wat moet ik doen?
 
 Clone deze repo.
 
