@@ -56,18 +56,20 @@ Uiteraard gaan we geen droge Powerpoint presentatie zien. Jij gaat een micro-fro
 * Npm
 * NX. Run: `npm i nx -g`
 
-__Zorg dat je die geinstalleerd hebt voordat je naar de workshop komt!!__
-
-## Aanmelden
-Aanmelden doe je bij Albert S, Conny, of Karin! Het liefst bij Albert. Albert en Yuri kunnen je bovendien ook toegang geven tot deze repo.
-
 ## How to get started
 
-Clone deze repo. Trek een terminal/command prompt, navigeer naar de map waar je deze repo gecloned hebt, en run:
+Clone deze repo.
+
+Run:
 
 ``` powershell
 npm install
 nx serve shell --devRemotes welkom
 ```
 
-Open een browser, en navigeer naar http://localhost:4200. De volgende instructies vindt je daar.
+Open een browser, en ga naar http://localhost:4200. 
+
+De volgende stappen vind je daar.
+
+## Aanmelden
+Aanmelden doe je bij Albert S, Conny, of Karin! Het liefst bij Albert. Albert en Yuri kunnen je bovendien ook toegang geven tot deze repo.
