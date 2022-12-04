@@ -4,6 +4,12 @@ WORKDIR /app
 
 COPY . .
 
+WORKDIR /app/apps/shell/src/assets
+
+RUN yes | cp -r module-federation.manifest.prod.json module-federation.manifest.json 
+
+WORKDIR /app
+
 RUN npm i nx -g
 RUN npm i
 
