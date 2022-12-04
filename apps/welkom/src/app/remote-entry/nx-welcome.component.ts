@@ -241,12 +241,12 @@ import { Component, ViewEncapsulation } from '@angular/core';
           </p>
           <ul>
             <li>
-              Je bendt beland in een repo met meerdere apps. Open de root map van de repo maar eens met VSCode. 
-              Je ziet een /apps map. Daarin staan alle hosts en alle micro-frontends. 
+              Je bent beland in een repo met meerdere apps. Open de root map van de repo maar eens met VSCode. 
+              Je ziet een /apps map. Daarin staan alle hosts(de apps waar de micro-frontends in draaien) en alle remotes(micro-frontends). 
               'shell' is in dit geval een host, en 'welkom' is een micro-frontend.
             </li>
             <li>
-              De shell app (de host dus) is de app waarin alle micro-frontends draaien.
+              De shell app (de host dus) is in dit geval de app waarin alle micro-frontends draaien.
             </li>
             <li>
               Deze app maakt gebruik van dynamic module federation. 
@@ -276,9 +276,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
           </p>
 
           <pre>nx g @nrwl/angular:remote [naam-van-microfrontend-hier] --host=shell --port=420X</pre>
+          <p><strong>Let op</strong> dat je geen <strong>port</strong> gebruikt die je collega's ook al gebruiken. Dan gaat het namelijk stuk!</p>
 
           <p>&nbsp;</p>
-          <p>Wil je 'm zien draaien in de shell?</p>
+          <p>Wil je jouw nieuwe micr-frontend zien draaien in de shell?</p>
           <pre>nx serve shell --devRemotes=welkom,[naam-van-microfrontend-hier]</pre>
 
           <p>&nbsp;</p>
@@ -308,19 +309,35 @@ import { Component, ViewEncapsulation } from '@angular/core';
             Tip: Wil je niet dat je collega's de boel slopen? Bouw ff een cypress testje voor ze.
           </p>
 
+          <div id="welcome">
+          <h1>
+              <span>Let's go!</span>
+              Backend nodig?
+          </h1>
+        </div>
           <p>&nbsp;</p>
           <p>
             Je bent hier gekomen om een front-end te bouwen. En geen back-end. Maar die heb je wel nodig.
-            Hier vindt je een api waarmee je JSON objecten kunt CRUDden:
-            <a href="https://github.com/appie2go/Testing.GraphStoreApi">https://github.com/appie2go/Testing.GraphStoreApi</a>.
-            Aris heeft er al 1 voor je opgespind in de cloud. Die kun je gebruiken. 
-            Je kunt er ook lokaal 1 draaien met Docker.
+            Ik heb al een API voor je gebouwd. Eentje waarmee je JSON objecten kunt CRUDden. De docs vind je hier:
+            <u><a href="https://github.com/appie2go/Testing.GraphStoreApi" target="_blank">https://github.com/appie2go/Testing.GraphStoreApi</a></u>.
           </p>
+
+          <p>&nbsp;</p>
+          <p>
+            Aris heeft er al 1 voor je opgespind in de cloud. Die kun je gebruiken. 
+            Je kunt er ook lokaal 1 draaien met Docker:
+          </p>
+          <pre>
+
+docker pull albertstarreveld/testing.graphstoreapi
+
+docker run -d -p 8123:80 --name graphstoreapi albertstarreveld/testing.graphstoreapi
+          </pre>
         </div>
 
         <div id="welcome">
           <h1>
-              <span>Ok. Klaar. Broek ophijsen... </span>
+              <span>Ok. M'n app is klaar! En nu?</span>
               Een Docker container maken
           </h1>
         </div>
@@ -329,10 +346,16 @@ import { Component, ViewEncapsulation } from '@angular/core';
           <p>&nbsp;</p>
           <p>
             We gaan straks alle micro-frontends en de shell deployen naar een AKS cluster.
-            Daarom moet de workload (zijnde jouw micro-frontend) in een container draaien.
+            Daarom moet de workload (jouw micro-frontend dus) in een container draaien.
             Je vindt in de root van de repo al twee dockerfiles. Dat zijn de shell.dockerfile en de welkom.dockerfile.
-            Deze kun je als uitgangspunt gebruiken. Kopieeer er één en pas die aan zodat je jouw app ermee kunt bouwen.
-
+            welkom.dockerfile kun je als uitgangspunt gebruiken. Kopieeer die en pas die aan zodat je jouw app ermee kunt bouwen.
+          </p>
+          <p>&nbsp;</p>
+          <p>
+            Let je ook even op dat alle URLS goed staan voor productie?
+          </p>
+          <p>&nbsp;</p>
+          <p>
             Een container bouwen doe je zo:
           </p>
           <pre>docker build -t [naam-van-je-microfrontend]:latest -f [naam-van-de-dockerfile] .</pre>
