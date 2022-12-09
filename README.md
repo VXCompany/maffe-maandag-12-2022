@@ -73,3 +73,4 @@ De volgende stappen vind je daar.
 
 ## Aanmelden
 Aanmelden doe je bij Albert S, Conny, of Karin! Het liefst bij Albert. Albert en Yuri kunnen je bovendien ook toegang geven tot deze repo.
+
