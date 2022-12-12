@@ -1,0 +1,115 @@
+{
+  "name": "medewerkers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/medewerkers/src",
+  "prefix": "maffe-maandag",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/medewerkers",
+        "index": "apps/medewerkers/src/index.html",
+        "main": "apps/medewerkers/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/medewerkers/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/medewerkers/src/favicon.ico",
+          "apps/medewerkers/src/assets"
+        ],
+        "styles": ["apps/medewerkers/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/medewerkers/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/medewerkers/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "medewerkers:build:production"
+        },
+        "development": {
+          "browserTarget": "medewerkers:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4206,
+        "publicHost": "http://localhost:4206"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "medewerkers:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/medewerkers/**/*.ts",
+          "apps/medewerkers/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/medewerkers/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/angular:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "medewerkers:build",
+        "port": 4206
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "medewerkers:build:development"
+        },
+        "production": {
+          "buildTarget": "medewerkers:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
