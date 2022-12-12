@@ -4,6 +4,13 @@ import { loadRemoteModule } from '@nrwl/angular/mf';
 
 export const appRoutes: Route[] = [
   {
+    path: 'medewerkers',
+    loadChildren: () =>
+      loadRemoteModule('medewerkers', './Module').then(
+        (m) => m.RemoteEntryModule
+      ),
+  },
+  {
     path: 'klantbeeld',
     loadChildren: () =>
       loadRemoteModule('klantbeeld', './Module').then(
