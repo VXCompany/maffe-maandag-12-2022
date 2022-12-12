@@ -19,7 +19,8 @@ export class WelcomeComponent implements OnInit {
   ) {}
 
   voegProfessionalToe() {
-    return '';
+    const value = this.professionalService.addAProfessional();
+    this.professionals.push(value);
   }
 
   ngOnInit(): void {
