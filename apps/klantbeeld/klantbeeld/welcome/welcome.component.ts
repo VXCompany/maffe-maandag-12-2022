@@ -23,6 +23,10 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
     this.professionalService.getAllProfessionals().subscribe((res) => {
       this.professionals = res;
-    })
+    });
+  }
+
+  deleteTheRecord(id: number) {
+    this.professionalService.deleteAProfessional(id);
   }
 }
