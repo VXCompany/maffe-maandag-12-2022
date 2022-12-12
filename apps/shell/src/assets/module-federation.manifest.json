@@ -1,5 +1,6 @@
 {
   "welkom": "http://localhost:4201",
   "klantbeeld": "http://localhost:4207",
-  "medewerkers": "http://localhost:4206"
+  "medewerkers": "http://localhost:4206",
+  "boksbal": "http://localhost:4205"
 }

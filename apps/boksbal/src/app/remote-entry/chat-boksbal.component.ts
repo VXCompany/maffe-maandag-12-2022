@@ -4,10 +4,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'maffe-maandag-nx-welcome',
-  template: `
-        <maffe-maandag-welcome></maffe-maandag-welcome>
-  `,
+  templateUrl: './chat-boksbal.component.html',
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class ChatBoksbalComponent {}

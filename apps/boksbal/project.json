@@ -1,0 +1,109 @@
+{
+  "name": "boksbal",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/boksbal/src",
+  "prefix": "maffe-maandag",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/boksbal",
+        "index": "apps/boksbal/src/index.html",
+        "main": "apps/boksbal/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/boksbal/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/boksbal/src/favicon.ico", "apps/boksbal/src/assets"],
+        "styles": ["apps/boksbal/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/boksbal/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/boksbal/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "boksbal:build:production"
+        },
+        "development": {
+          "browserTarget": "boksbal:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4205,
+        "publicHost": "http://localhost:4205"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "boksbal:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/boksbal/**/*.ts", "apps/boksbal/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/boksbal/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/angular:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "boksbal:build",
+        "port": 4205
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "boksbal:build:development"
+        },
+        "production": {
+          "buildTarget": "boksbal:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

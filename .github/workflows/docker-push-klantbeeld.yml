@@ -1,9 +1,12 @@
-name: Build Containers and push to ACR
+name: Build klantbeeld container and push to ACR
 on:
   push:
     branches: [main]
     paths:
-      - 'apps/welkom'
+      - 'apps/klantbeeld'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 permissions:
       id-token: write
@@ -12,6 +15,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      # Checks out the repository this file is in
+      - uses: actions/checkout@v3
+
       - name: 'Az CLI login'
         uses: azure/login@v1
         with:
@@ -22,9 +28,9 @@ jobs:
       - name: docker login, build and push
         run: |
           az acr login -n ${{ secrets.ACR }} 
-          docker build ${{ env.TARGET_DIR_BUILD }} -t ${{ secrets.ACR }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.run_number }}
+          docker build ${{ env.TARGET_DIR_BUILD }} -t ${{ secrets.ACR }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.run_number }} -f ${{ env.TARGET_DOCKER_FILE }}
           docker push ${{ secrets.ACR }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.run_number }}
         env:
-          IMAGE_NAME: welkom
+          IMAGE_NAME: klantbeeld
           TARGET_DIR_BUILD: ./
-          TARGET_DOCKER_FILE: welkom.Dockerfile
+          TARGET_DOCKER_FILE: klantbeeld.Dockerfile

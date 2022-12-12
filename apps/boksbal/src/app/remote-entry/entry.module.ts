@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { RemoteEntryComponent } from './entry.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { remoteRoutes } from './entry.routes';
-import {WelcomeComponent} from "../../../klantbeeld/welcome/welcome.component";
+import {ChatBoksbalComponent} from "./chat-boksbal.component";
 
 @NgModule({
-    declarations: [RemoteEntryComponent, NxWelcomeComponent, WelcomeComponent],
+  declarations: [RemoteEntryComponent, ChatBoksbalComponent],
   imports: [CommonModule, RouterModule.forChild(remoteRoutes)],
   providers: [],
 })
