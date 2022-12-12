@@ -1,15 +1,21 @@
+<div class="chuck">
+    <b>Chuck Norris Says:</b>
+    <p>
+        {{joke}}
+    </p>
+</div>
+
 <h1>Overview of the professional</h1>
 <table>
-  <thead>
-  <th>Name</th>
-  </thead>
-  <tbody>
-  <tr *ngFor="let prof of professionals;" >
-    <td>{{prof.id}}</td>
-    <td>{{prof.name}}</td>
-    <td>{{prof.happinessindex}}</td>
-  </tr>
-  </tbody>
+    <thead>
+        <th>Name</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prof of professionals;">
+            <td>{{prof.id}}</td>
+            <td>{{prof.name}}</td>
+            <td>{{prof.happinessindex}}</td>
+        </tr>
+    </tbody>
 </table>
 <button (click)="voegProfessionalToe()">Add a professional</button>
-
