@@ -35,6 +35,10 @@ export class WelcomeComponent implements OnInit {
 
   deleteTheRecord(id: number) {
     this.professionalService.deleteAProfessional(id);
+    // this.professionals.filter((res) => res.id !== id)
+    this.professionals = this.professionals.filter((obj) => {
+      return obj.id !== id;
+    });
   }
 
   getJoke() {
