@@ -2,7 +2,7 @@ FROM node:alpine as builder
 
 WORKDIR /app
 
-COPY apps/klantbeeld .
+COPY . .
 
 RUN npm i nx -g
 RUN npm i
