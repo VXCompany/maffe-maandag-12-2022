@@ -4,9 +4,16 @@ import { loadRemoteModule } from '@nrwl/angular/mf';
 
 export const appRoutes: Route[] = [
   {
+    path: 'klantbeeld',
+    loadChildren: () =>
+      loadRemoteModule('klantbeeld', './Module').then(
+        (m) => m.RemoteEntryModule
+      ),
+  },
+  {
     path: '',
-    redirectTo: '/welkom', 
-    pathMatch: 'full'
+    redirectTo: '/welkom',
+    pathMatch: 'full',
   },
   {
     path: 'welkom',

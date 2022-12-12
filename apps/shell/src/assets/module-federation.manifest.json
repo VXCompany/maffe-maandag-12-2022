@@ -1,3 +1,4 @@
 {
-  "welkom": "http://localhost:4201"
+  "welkom": "http://localhost:4201",
+  "klantbeeld": "http://localhost:4207"
 }
