@@ -2,8 +2,8 @@ name: Build Containers and push to ACR
 on:
   push:
     branches: [main]
-    # paths:
-    #   - 'app'
+    paths:
+      - 'apps/welkom'
 
 permissions:
       id-token: write
