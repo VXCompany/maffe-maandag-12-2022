@@ -25,6 +25,7 @@ export class WelcomeComponent implements OnInit {
       this.getJoke();
     }
     this.professionals.push(value);
+    this.joke = "";
   }
 
   ngOnInit(): void {
