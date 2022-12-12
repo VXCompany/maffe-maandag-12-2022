@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Medewerker } from './medewerker';
+import { MedewerkerService } from '../medewerker.service';
 
 @Component({
   selector: 'maffe-maandag-overzicht',
@@ -7,6 +8,18 @@ import { Medewerker } from './medewerker';
   styleUrls: ['./overzicht.component.scss'],
 })
 export class OverzichtComponent {
-  medewerkers: Medewerker[] = [new Medewerker("Eelco", "Angular Developer")];
+  medewerkers: Medewerker[] = [];
+
+  /**
+   *
+   */
+  constructor(private medewerkerService: MedewerkerService) {
+    this.getMedewerkers();
+  }
+
+  getMedewerkers(): void {
+    this.medewerkerService.getMedewerkers()
+        .subscribe(medewerkers => this.medewerkers = medewerkers);
+  }
 
 }
