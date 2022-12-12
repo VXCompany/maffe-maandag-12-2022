@@ -35,8 +35,10 @@ describe('AppComponent', () => {
     tick();
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
+
+    console.log(compiled.querySelector('h1')?.textContent);
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome shell'
+      'Home'
     );
   }));
 });
