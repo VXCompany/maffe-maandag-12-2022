@@ -17,4 +17,9 @@
   </tbody>
 </table>
 <button (click)="voegProfessionalToe()">Add a professional</button>
-
+<div class="chuck" *ngIf="joke">
+  <b>Chuck Norris Says:</b>
+  <p>
+    {{joke}}
+  </p>
+</div>
