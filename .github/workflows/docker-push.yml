@@ -22,7 +22,7 @@ jobs:
       - name: docker login, build and push
         run: |
           az acr login -n ${{ secrets.ACR }} 
-          docker build ${{ env.TARGET_DIR_BUILD }} -t ${{ secrets.ACR }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.run_number }}
+          docker build ${{ env.TARGET_DIR_BUILD }} -t ${{ secrets.ACR }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.run_number }} -f ${{ env.TARGET_DOCKER_FILE }}
           docker push ${{ secrets.ACR }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.run_number }}
         env:
           IMAGE_NAME: welkom
