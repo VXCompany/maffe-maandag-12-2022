@@ -4,7 +4,9 @@ Als mt
 Wil ik een overzicht van alle professionals en hoe blij ze zijn
 Zodat ik weet of we andere opdrachten moeten zoeken
 
-(Onderstaande is natuurlijk totale onzin, maar wel leuk voor de workshop:) Ik wil graag een overzicht van professionals, en iedereen kan daar iemand z'n hapiness index updaten. Als iemand op "niet blij" gezet wordt wil ik dat er iets op het scherm komt te staan waar hij wel blij van wordt.
+(Onderstaande is natuurlijk totale onzin, maar wel leuk voor de workshop:) Ik wil graag een overzicht van professionals, 
+en iedereen kan daar iemand z'n hapiness index updaten. 
+Als iemand op "niet blij" gezet wordt wil ik dat er iets op het scherm komt te staan waar hij wel blij van wordt.
 
 Requirements:
 - Er is een lijst met professionals

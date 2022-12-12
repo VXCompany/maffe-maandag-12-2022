@@ -5,9 +5,10 @@ import { RouterModule } from '@angular/router';
 import { RemoteEntryComponent } from './entry.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { remoteRoutes } from './entry.routes';
+import {WelcomeComponent} from "../../../klantbeeld/welcome/welcome.component";
 
 @NgModule({
-  declarations: [RemoteEntryComponent, NxWelcomeComponent],
+    declarations: [RemoteEntryComponent, NxWelcomeComponent, WelcomeComponent],
   imports: [CommonModule, RouterModule.forChild(remoteRoutes)],
   providers: [],
 })
