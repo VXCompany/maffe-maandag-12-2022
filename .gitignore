@@ -194,3 +194,6 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/angular,node,visualstudiocode
 
 .angular
+.vscode/launch.json
+.vs/VSWorkspaceState.json
+.vs/maffe-maandag-12-2022/v17/.wsuo
