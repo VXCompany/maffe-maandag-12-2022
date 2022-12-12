@@ -17,11 +17,25 @@ export class ProfessionalService {
     return this.httpClient.get<Professional[]>("https://api2.maffe-maandag.nl/profs")
   }
 
+  deleteAProfessional(id: number) : void {
+    this.httpClient.delete("https://api2.maffe-maandag.nl/profs/" + id)
+      .subscribe({
+        next: data => {
+          // this.status = 'Delete successful';
+        },
+        error: error => {
+          // this.errorMessage = error.message;
+          console.error('There was an error!', error);
+        }
+      });
+  }
+
   addAProfessional(): Professional {
+    const rndInt = this.randomIntFromInterval(1, 3);
     const value : Professional = {
       id: Math.round(Math.random() * 1000000),
       name: "Geen zin om dit te implementeren",
-      happinessindex: 1123
+      happinessindex: rndInt
     };
     console.log(JSON.stringify(value))
     // const headers = new HttpHeaders({
@@ -31,5 +45,9 @@ export class ProfessionalService {
       console.log(res);
     })
     return value;
+  }
+
+  randomIntFromInterval(min: number, max: number) : number{ // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min)
   }
 }

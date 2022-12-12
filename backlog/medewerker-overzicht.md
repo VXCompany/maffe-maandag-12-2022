@@ -20,3 +20,30 @@ Requirements:
 
 - Nice to have:
     - Als je de combinatie ctrl-shift-p indrukt kun je pacman spelen
+
+
+Specifieke wensen vd klanten:
+
+Foto
+NAam mederwerker
+Rol
+Taal
+Niveau
+Woonplaats
+Huidige opdracht
+Startdatum contract
+Einddatum contract 
+	2 maanden voor einde contract een alert
+Huidige tarief
+Opmerkingen
+Vakantieplanning
+Streeftarier
+Verjaardag
+Inzet uren
+Laatste update datum CV (met alert na 2 maanden en 3 maanden voor het einde)
+Gewenst einde opdracht van klant of opdrachtgever notificatie dat er iets nieuws gezocht moet worden
+Account manager
+
+Optie: kolommen verbergen
+
+
