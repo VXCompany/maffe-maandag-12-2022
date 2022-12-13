@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: le-cluster-issuer
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: maffemaandag@vxcompany.com
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+    - dns01:
+        azureDNS:
+          subscriptionID: "6eaaf383-01c1-4431-921c-73577a49128d"
+          resourceGroupName: "dns"
+          hostedZoneName: "maffe-maandag.nl"
+          environment: AzurePublicCloud
+          managedIdentity:
+            # az aks show -n aks-maffe-maandag -g rg-maffe-maandag --query "identityProfile.kubeletidentity.clientId" -o tsv
+            clientID: "9af77b08-0267-4f66-aa2f-62dca77b63c7" 

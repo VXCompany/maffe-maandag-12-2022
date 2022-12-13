@@ -1,0 +1,80 @@
+name: Build and deploy Bicep config
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'main.json'
+      - 'kubernetes/cluster/**.yaml'
+      - '.github/workflows/arm-deploy.yml'
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  RESOURCE_GROUP: "rg-maffe-maandag"
+  DNS_PREFIX: "zapigezondag"
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out the repository this file is in
+      - uses: actions/checkout@v3
+
+      # Logs in with your Azure credentials
+      - name: Azure login
+        uses: azure/login@v1.4.6
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      # Deploys Bicep config
+      - name: Deploy Bicep config
+        run: |
+          az deployment group create --resource-group ${{ env.RESOURCE_GROUP }} --template-uri https://raw.githubusercontent.com/aristosvo/aks-maffe-maandag/main/main.json -p dnsPrefix=${{ env.DNS_PREFIX }} -o none
+          echo EXIT_CERTMANAGER=`az deployment group show -g ${{ env.RESOURCE_GROUP }} -n main --query 'properties.outputs.certmanagerOutput.value[0].outputs[0].CommandOutput.exitCode'` >> $GITHUB_ENV
+          echo EXIT_INGRESS=`az deployment group show -g ${{ env.RESOURCE_GROUP }} -n main --query 'properties.outputs.ingressOutput.value[0].outputs[0].CommandOutput.exitCode'` >> $GITHUB_ENV
+          echo EXIT_EXTERNALDNS=`az deployment group show -g ${{ env.RESOURCE_GROUP }} -n main --query 'properties.outputs.externalDNSOutput.value[0].outputs[0].CommandOutput.exitCode'` >> $GITHUB_ENV
+      - name: Helm Chart Check cert-manager
+        if: ${{ env.EXIT_CERTMANAGER != '0' }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+              core.setFailed('cert-manager Helm Chart deployment failed!')
+      - name: Helm Chart Check ingress-nginx
+        if: ${{ env.EXIT_INGRESS != '0' }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+              core.setFailed('ingress-nginx Helm Chart deployment failed!')
+      - name: Helm Chart Check external-dns
+        if: ${{ env.EXIT_EXTERNALDNS != '0' }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+              core.setFailed('external-dns Helm Chart deployment failed!')
+
+      # Deploys AKS config, cluster level
+      - name: Set AKS Context
+        uses: azure/aks-set-context@v3
+        with:
+          resource-group: '${{ env.RESOURCE_GROUP }}'
+          cluster-name: 'aks-maffe-maandag'
+      - name: Config cert-manager
+        uses: Azure/k8s-deploy@v3.1
+        with:
+          namespace: 'cert-manager'
+          manifests: |
+              kubernetes/cluster/cluster-issuer.yaml
+      - name: Deploy Apps Namespace
+        uses: Azure/k8s-deploy@v3.1
+        with:
+          namespace: 'default'
+          manifests: |
+              kubernetes/cluster/namespace-apps.yaml
