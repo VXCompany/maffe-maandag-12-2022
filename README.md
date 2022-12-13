@@ -6,4 +6,4 @@ We hebben net een Value Proposition map gemaakt en een backlog. De volgende stap
 
 ## De workshops
 - Ga verder met micro frontends, monorepos, en Nx ([src/Readme.md](https://github.com/VXCompany/maffe-maandag-12-2022/tree/main/src))
-- Ga verder met de deployment van micro-frontends met GitHub Actions, Kubernetes, Helm, en nog veel meer ([infra/Readme.md](https://github.com/VXCompany/maffe-maandag-12-2022/tree/main/infra)
+- Ga verder met de deployment van micro-frontends met GitHub Actions, Kubernetes, Helm, en nog veel meer ([infra/Readme.md](https://github.com/VXCompany/maffe-maandag-12-2022/tree/main/infra))
